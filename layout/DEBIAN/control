@@ -1,0 +1,9 @@
+Package: com.oveimage.tweak
+Name: OverImage
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Description: Display images as overlay on iOS 18 with zoom, move, and toggle features
+Maintainer: Developer
+Author: Developer
+Section: Tweaks
+Depends: mobilesubstrate, firmware (>= 18.0)

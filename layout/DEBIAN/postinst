@@ -1,0 +1,4 @@
+substrate_priority() {
+    local priority="$1"
+    echo 1
+}

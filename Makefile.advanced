@@ -1,0 +1,49 @@
+.PHONY: clean install
+
+FINALPACKAGE = 1
+DEBUG = 0
+
+# Compiler settings
+TARGET = iphone:clang:latest:18.0
+ARCHS = arm64 arm64e
+
+include $(THEOS)/makefiles/common.mk
+
+TWEAK_NAME = OverImageTweak
+OverImageTweak_TWEAK_BUNDLE_NAME = OverImageTweak
+OverImageTweak_BUNDLE_NAME = OverImageTweak
+
+# Source files
+OverImageTweak_FILES = \
+    Tweak.xm \
+    OverImageOverlayView.mm \
+    OverImageManager.mm
+
+# Frameworks
+OverImageTweak_FRAMEWORKS = \
+    UIKit \
+    CoreGraphics \
+    AVFoundation \
+    Photos \
+    GraphicsServices
+
+# Compiler flags
+OverImageTweak_CFLAGS = -fobjc-arc -O3
+OverImageTweak_LDFLAGS = -lsubstrate
+
+# Additional settings
+OverImageTweak_INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries
+
+# Include Theos makefiles
+include $(THEOS_MAKE_PATH)/tweak.mk
+
+# Custom targets
+before-all::
+	@echo "Building OverImage Tweak for iOS 18..."
+
+after-package::
+	@echo "Package created: $(THEOS_STAGING_DIR)/Library/MobileSubstrate/DynamicLibraries/OverImageTweak.dylib"
+
+after-install::
+	@echo "Tweak installed successfully!"
+	@echo "Install Preferences at: /Library/MobileSubstrate/DynamicLibraries/"

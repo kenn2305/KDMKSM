@@ -1,0 +1,25 @@
+Name: OverImage
+Package: com.oveimage.tweak
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Description: 显示图像叠加层 | Display images as global floating overlay on iOS 18
+Maintainer: Developer <dev@example.com>
+Author: Developer
+Section: Tweaks
+Depends: mobilesubstrate, firmware (>= 18.0)
+Conflicts: 
+Replaces: 
+Provides: 
+Priority: optional
+Homepage: 
+Sponsor: 
+Dev: 
+Tag: purpose::extension, compatible_devices::iphone7up, compatible_min::18.0
+
+# Features:
+# - Global image overlay on any app
+# - Pinch to zoom (0.5x - 3.0x)
+# - Drag to move
+# - Tap outside to toggle visibility
+# - Original resolution preservation
+# - No shadows/borders
